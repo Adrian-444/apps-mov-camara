@@ -1,5 +1,5 @@
 import { CameraView, useCameraPermissions } from "expo-camera";
-import * as MediaLibrary from "expo-media-library";
+import * as MediaLibrary from "expo-media-library/legacy";
 import { useRef, useState } from "react";
 import { Alert, Button, Image, Platform, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 
@@ -87,16 +87,15 @@ export default function App() {
 
     return (
         <View style={styles.container}>
-            <CameraView style={styles.camera} facing={facing} ref={cameraRef}>
-                <View style={styles.buttonContainer}>
-                    <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
-                        <Text style={styles.text}>Voltear cámara</Text>
-                    </TouchableOpacity>
-                    <TouchableOpacity style={styles.captureButton} onPress={takePicture}>
-                        <View style={styles.captureInner} />
-                    </TouchableOpacity>
-                </View>
-            </CameraView>
+            <CameraView style={styles.camera} facing={facing} ref={cameraRef} />
+            <View style={styles.buttonContainer}>
+                <TouchableOpacity style={styles.button} onPress={toggleCameraFacing}>
+                    <Text style={styles.text}>Voltear cámara</Text>
+                </TouchableOpacity>
+                <TouchableOpacity style={styles.captureButton} onPress={takePicture}>
+                    <View style={styles.captureInner} />
+                </TouchableOpacity>
+            </View>
         </View>
     );
 }
@@ -114,7 +113,7 @@ const styles = StyleSheet.create({
         flex: 1,
     },
     buttonContainer: {
-        flex: 1,
+        ...StyleSheet.absoluteFillObject,
         flexDirection: "row",
         backgroundColor: "transparent",
         margin: 64,

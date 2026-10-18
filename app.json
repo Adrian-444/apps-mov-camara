@@ -16,10 +16,27 @@
                 "foregroundImage": "./assets/android-icon-foreground.png",
                 "backgroundImage": "./assets/android-icon-background.png",
                 "monochromeImage": "./assets/android-icon-monochrome.png"
-            }
+            },
+            "package": "com.adrian444.reactcamara"
         },
         "web": {
             "favicon": "./assets/favicon.png"
-        }
+        },
+        "extra": {
+            "eas": {
+                "projectId": "6a9888cb-902b-458f-9fee-6bef79e5d600"
+            }
+        },
+        "plugins": [
+            [
+                "expo-splash-screen",
+                {
+                    "image": "./assets/splash-icon.png",
+                    "imageWidth": 200,
+                    "resizeMode": "contain",
+                    "backgroundColor": "#536DFE"
+                }
+            ]
+        ]
     }
 }
