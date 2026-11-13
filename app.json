@@ -1,6 +1,6 @@
 {
     "expo": {
-        "name": "react-camara",
+        "name": "FotoApuntes",
         "slug": "react-camara",
         "version": "1.0.0",
         "orientation": "portrait",
@@ -10,14 +10,17 @@
             "supportsTablet": true
         },
         "android": {
-            "permissions": ["android.permission.CAMERA"],
+            "permissions": [
+                "android.permission.CAMERA"
+            ],
             "adaptiveIcon": {
                 "backgroundColor": "#E6F4FE",
                 "foregroundImage": "./assets/android-icon-foreground.png",
                 "backgroundImage": "./assets/android-icon-background.png",
                 "monochromeImage": "./assets/android-icon-monochrome.png"
             },
-            "package": "com.adrian444.reactcamara"
+            "package": "com.adrian444.reactcamara",
+            "googleServicesFile": "./google-services.json"
         },
         "web": {
             "favicon": "./assets/favicon.png"
@@ -36,7 +39,29 @@
                     "resizeMode": "contain",
                     "backgroundColor": "#536DFE"
                 }
-            ]
-        ]
+            ],
+            "@react-native-firebase/app",
+            "@react-native-firebase/app-check",
+            [
+                "expo-build-properties",
+                {
+                    "ios": {
+                        "useFrameworks": "dynamic"
+                    }
+                }
+            ],
+            [
+                "expo-image-picker",
+                {
+                    "cameraPermission": "FotoApuntes usa la cámara para fotografiar tus apuntes.",
+                    "photosPermission": "FotoApuntes necesita acceso a tus fotos para elegir un apunte de la galería.",
+                    "microphonePermission": false
+                }
+            ],
+            "expo-sqlite",
+            "expo-status-bar",
+            "expo-router"
+        ],
+        "scheme": "reactcamara"
     }
 }
